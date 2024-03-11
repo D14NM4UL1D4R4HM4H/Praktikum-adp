@@ -1,0 +1,19 @@
+program menghitung_luas_permukaan_balok;
+uses crt;
+var
+  l,w,h,luas:real;
+  
+begin
+  clrscr;
+  writeln('Nama Dian Maulida Rahmah');
+  writeln('NIM 2310432044');
+  write('Panjang Balok =');
+  readln(l);
+  write('Lebar Balok =');
+  readln(w);
+  write('Tinggi Balok =');
+  readln(h);
+  Luas := 2 * (l*w + l*h + w*h);
+  writeln('Luas Permukaan Balok =',Luas);
+  readln;
+end.
