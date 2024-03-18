@@ -1,0 +1,199 @@
+program memesan_menu_di_sebuah_restoran;
+uses crt;
+var 
+  p:string;
+  Harga,pilih,Jumlah,jumlah_pesanan,Total,Pesanan,Makanan,Minuman:integer;
+  
+begin
+  clrscr;
+  writeln('Dian Maulida Rahmah');
+  writeln('NIM 2310432044');
+  writeln('Modul 2');
+  writeln('_______________________________');
+  writeln('');
+  writeln('      ~• Restoran ADP •~');
+  writeln('');
+  write('Pemesan : ');
+  readln(p);
+  writeln('');
+  writeln('          Daftar Menu');
+  writeln('--------------------------------');
+  writeln(' 1. Makanan');
+  writeln(' 2. Minuman');
+  writeln(' 3. Makanan dan Minuman');
+  writeln('---------------------------------');
+  writeln('                          ');
+  write('Pilih : ');
+  readln(Pilih);
+  writeln('');
+  
+    if(pilih = 1) then begin writeln(' Makanan');
+    writeln('');
+  
+    writeln('    Daftar Menu Makanan');
+    writeln('-------------------------------');
+    writeln(' 1. Bakso Lava          : 25000');
+    writeln(' 2. Mie Ayam            : 15000');
+    writeln(' 3. Nasi goreng spesial : 20000');
+    writeln(' 4. Kwetiau goreng      : 18000');
+    writeln('--------------------------------');
+    writeln('');
+    write('    Pesanan : ');
+    readln(Pesanan);
+    
+    if(pesanan=1) then begin writeln('    Bakso Lava');
+      if(pesanan=1) then begin writeln('    Harga : 25000');
+      end;
+        if(pesanan=1) then begin Harga:= 25000;
+        end;
+    end;
+    
+    if( pesanan=2) then begin writeln('    Mie Ayam');
+      if(pesanan=2) then begin writeln('    Harga : 15000');
+      end;
+        if(pesanan=2) then begin Harga:= 15000;
+        end;
+    end;
+    
+    if( pesanan=3) then begin writeln('    Nasi goreng spesial');
+      if(pesanan=3) then begin writeln('    Harga : 20000');
+      end;
+        if(pesanan=3) then begin Harga:= 20000;
+        end;
+    end;
+    
+    if( pesanan=4) then begin writeln('    Kwetiau goreng');
+      if(pesanan=4) then begin writeln('    Harga : 18000');
+      end;
+        if(pesanan=4) then begin Harga:= 18000;
+        end;
+    end;
+    write('    Jumlah Pesanan : ');
+    readln(Jumlah_Pesanan);
+    Total := harga*jumlah_pesanan;
+    writeln('--------------------------------');
+    writeln('            Total harga : ',total);
+  end;
+    
+    if(pilih=2) then begin writeln('Minuman');
+    writeln('');
+    
+    writeln('       Daftar Menu Minuman ');
+    writeln('--------------------------------');
+    writeln(' 1. Es teh             : 10000');
+    writeln(' 2. Lemon tea          : 15000');
+    writeln(' 3. Capuccino cincau   : 17000');
+    writeln(' 4. Boba choco caramel : 20000'); 
+    writeln(' 5. air mineral        :  8000');
+    writeln('---------------------------------');
+    writeln('');
+    write('    Pesanan = ');
+    readln(Pesanan);
+    
+    if(pesanan = 1) then begin writeln('    Es teh');
+      if(pesanan=1) then begin writeln('    Harga : 10000');
+      end;
+        if(pesanan=1) then begin Harga:= 10000;
+        end;
+    end;
+    
+    if(pesanan = 2) then begin writeln('    Lemon tea');
+      if(pesanan=2) then begin writeln('    Harga : 15000');
+      end;
+        if(pesanan=2) then begin Harga:= 15000;
+        end;
+    end;
+    
+    if(pesanan = 3) then begin writeln('    Capuccino cincau');
+      if(pesanan=3) then begin writeln('    Harga : 17000');
+      end;
+        if(pesanan=3) then begin Harga:= 17000;
+        end;
+    end;
+    
+    if(pesanan = 4) then begin writeln('    Boba choco caramel');
+      if(pesanan=4) then begin writeln('    Harga : 20000');
+      end;
+        if(pesanan=4) then begin Harga:= 20000;
+        end;
+    end;
+    
+    if(pesanan = 5) then begin writeln('    Air mineral');
+      if(pesanan=5) then begin writeln('    Harga : 8000');
+      end;
+        if(pesanan=5) then begin Harga:= 8000;
+        end;
+    end;
+    write('    Jumlah Pesanan : ');
+    readln(jumlah_pesanan);
+    Total := harga*jumlah_pesanan;
+    writeln('---------------------------------');
+    writeln('           Total harga : ',Total);
+  end;
+    
+    if(pilih = 3) then begin writeln('Makanan dan Minuman');
+    writeln('');
+    
+    writeln('         Daftar Menu Makanan dan Minuman');
+    writeln('--------------------------------------------------');
+    writeln(' 1. Bakso Lava dan Es teh                : 35000');
+    writeln(' 2. Mie Ayam dan Air mineral             : 23000');
+    writeln(' 3. Bakso Lava dan Lemon tea             : 40000');
+    writeln(' 4. Nasi goreng spesial dan Es teh       : 30000');
+    writeln(' 5. Kwetiau goreng dan Cappucino cincau  : 35000');
+    writeln('---------------------------------------------------');
+    writeln('');
+    write('    Pesanan = ');
+    readln(Pesanan);
+    
+    if(pesanan = 1)then begin writeln('    Bakso Lava dan Es teh');
+      if(pesanan=1) then begin writeln('    Harga : 35000');
+      end;
+        if(pesanan=1)then begin Harga := 35000;
+        end;
+    end;
+    
+    if(pesanan = 2)then begin writeln('    Mie Ayam dan Air mineral');
+      if(pesanan=2) then begin writeln('    Harga : 23000');
+      end;
+        if(pesanan=2) then begin Harga := 23000;
+        end;
+    end;
+    
+    if(pesanan = 3)then begin writeln('    Bakso Lava dan Lemon tea');
+      if(pesanan=3)then begin writeln('    Harga : 40000');
+      end;
+        if(pesanan=3)then begin Harga := 40000;
+        end;
+    end;
+    
+    if(pesanan = 4)then begin writeln('    Nasi goreng spesial dan Es teh');
+      if(pesanan=4) then begin writeln('    Harga : 30000');
+      end;
+        if(pesanan=4) then begin Harga := 30000;
+        end;
+    end;
+    
+    if(pesanan= 5)then begin writeln('    Kwetiau goreng dan Cappucino cincau');
+      if(pesanan=5) then begin writeln('    Harga : 35000');
+      end;
+        if(pesanan=5)then begin Harga := 35000;
+        end;
+    end;
+    write('    Jumlah Pesanan : ');
+    readln(jumlah_pesanan);
+    Total := harga*jumlah_pesanan;
+    writeln('---------------------------------------------------');
+    writeln('                             Total harga : ',Total);
+  end;
+  
+    if(pilih=4) then begin writeln('Kode Pesanan Tidak Valid');
+    end;
+    
+  writeln('');
+  writeln('');
+  writeln('');
+  writeln('            Terima Kasih');
+       
+  readln;
+end.
