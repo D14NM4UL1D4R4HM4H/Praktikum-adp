@@ -1,0 +1,52 @@
+print("Nama Dian Maulida Rahmah")
+print("NIM 2310432044")
+print("Modul 3 Perulangan")
+print("------------------------------------------")
+print(" ")
+
+def menu():
+	while True:
+		print(" ")
+		n = int(input("               MENU:\n   1. Tabel perkalian n x n\n   2. Tabel penjumlahan n x n\n   3. Keluar\n      Pilih Menu:"))
+		if n in [1,2,3]:
+			return n
+		else:
+			print(" ")
+			print("Input tidak valid. Silahkan pilih 1,2,atau 3")
+		
+while True:
+	pilihan = menu()
+	if pilihan == 1:
+		print(" ")
+		n = int(input("Masukkan nilai n (1-10):"))
+		if 1 <= n <= 10:
+			print(" ")
+			print("Tabel Perkalian",n,"x",n)
+			print("_____________________________________________________________________________")
+			for i in range(1, n+1):
+				for j in range(1, n+1):
+					print(i*j, end = "\t" )
+				print()
+				print("______________________________________________________________________________")
+		else:
+				print("Nilai n harus berada di antara 1 hingga 10.")
+	elif pilihan == 2:
+		print(" ")
+		n = int(input("Masukkan nilai n (1-10):"))
+		if 1 <= n <= 10:
+			print(" ")
+			print("Tabel Penjumlahan",n,"+",n)
+			print("_____________________________________________________________________________")
+			for i in range (0, n+1):
+				for j in range(0, n+1):
+					print(i+j, end = "\t" )
+				print()
+				print("______________________________________________________________________________")
+				
+				print(" ")
+		else:
+				print("Nilai n harus berada di antara 1 hingga 10.")
+	elif pilihan == 3:
+			print(" ")
+			print("        Terima Kasih")
+			break
