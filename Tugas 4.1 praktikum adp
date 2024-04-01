@@ -1,0 +1,34 @@
+program bilangan_sempurna;
+uses crt;
+var
+  bilangan, total, i: integer;
+
+begin
+  clrscr;
+  writeln('Dian Maulida Rahmah');
+  writeln('NIM 2310432044');
+  writeln('Modul 4');
+  writeln('__________________________');
+  writeln(' ');
+  write('Masukkan bilangan bulat positif: ');
+  readln(bilangan);
+
+  total := 0;
+  for i := 1 to (bilangan div 2) do
+  begin
+    if bilangan mod i = 0 then
+      total := total + i;
+  end;
+
+  if total = bilangan then
+    writeln(bilangan, ' adalah bilangan sempurna')
+  else
+    writeln(bilangan, ' bukan bilangan sempurna');
+
+  if bilangan mod 2 = 0 then
+    writeln(bilangan, ' adalah bilangan Genap')
+  else
+    writeln(bilangan, ' adalah bilangan Ganjil');
+  writeln(' ');
+  writeln(' Terimakasih');
+end.
