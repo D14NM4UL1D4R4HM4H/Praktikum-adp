@@ -1,0 +1,26 @@
+print('Dian Maulida Rahmah')
+print('NIM 2310432044')
+print('Tugas Modul 5')
+print('___________________________')
+print(' ')
+
+abjad = 'abcdefghijklmnopqrstuvwxyz'
+
+k = int(input("Masukkan nilai k (dari 1 hingga 26): "))
+teks_asli = input("Masukkan teks yang akan dienkripsi: ")
+
+teks_terenkripsi = ' '
+for karakter in teks_asli:
+    if karakter.lower() in abjad:
+        huruf_besar = karakter.isupper()
+        index_karakter = abjad.index(karakter.lower())
+        index_baru = (index_karakter + k) % 26
+        karakter_baru = abjad[index_baru]
+        if huruf_besar:
+            teks_terenkripsi += karakter_baru.upper()
+        else:
+            teks_terenkripsi += karakter_baru
+    else:
+        teks_terenkripsi += karakter
+
+print("Teks setelah dienkripsi:", teks_terenkripsi)
