@@ -1,0 +1,38 @@
+print("Dian Maulida Rahmah")
+print("NIM 2310432044")
+print("Modul 6")
+print("_"*77)
+print(" ")
+print("JADWAL PENERBANGAN PESAWAT")
+print(" ")
+print("="*77)
+print("{:<15}| {:<15}| {:<20}| {:<20}|". format("Kota Asal", "Kota Tujuan", "Waktu Keberangkatan", "Waktu Kedatangan"))
+print("="*77)
+
+jadwal_penerbangan= [
+    ["Solo", "Jeddah", "06:00", "20:00"],
+    ["Pekanbaru", "Bangkok", "09:00", "13:40"],
+    ["Padang", "Kuala Lumpur", "14:00", "15:15"]
+]
+
+for j in jadwal_penerbangan:
+    print("{:<15}| {:<15}| {:<20}| {:<20}| ". format(j[0], j[1], j[2], j[3]))
+    print("-"*77)
+    print(" ")
+     
+print("RUTE TERCEPAT")
+print(" ")
+rute_a = "Solo - Jeddah"
+rute_b = "Pekanbaru - Bangkok"
+rute_c = "Padang - Kuala Lumpur"
+rute_x = int(input("Rute x: "))
+rute_y = int(input("Rute y: "))
+
+if rute_x == 1 and rute_y == 2:
+    print("rute yang tercepat antara ", rute_a, "dan", rute_b, "adalah", rute_b)
+if rute_x == 1 and rute_y == 3:
+    print("rute yang tercepat antara ", rute_a, "dan", rute_c, "adalah", rute_c)
+if rute_x == 2 and rute_y == 3:
+    print("rute yang tercepat antara ", rute_b, "dan", rute_c, "adalah", rute_c) 
+else: 
+ 	print("Rute tidak ditemukan")
