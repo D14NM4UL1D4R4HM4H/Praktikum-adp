@@ -1,0 +1,68 @@
+print("Dian Maulida Rahmah")
+print("NIM 2310432044")
+print("Modul 7")
+print("-"*60)
+print("jadwal_kegiatan = ")
+def tambah_jadwal(jadwal_kegiatan):
+    waktu_mulai = input("Masukkan waktu mulai kegiatan (HH:MM): ")
+    waktu_selesai = input("Masukkan waktu selesai kegiatan (HH:MM): ")
+    deskripsi = input("Masukkan deskripsi kegiatan: ")
+    jadwal_kegiatan.append([waktu_mulai, waktu_selesai, deskripsi])
+    print("Kegiatan berhasil ditambahkan!")
+    return jadwal_kegiatan
+
+def hapus_jadwal(jadwal_kegiatan):
+    if not jadwal_kegiatan:
+        print("Jadwal kegiatan yang akan di lakukan kosong.")
+    else:
+        print("Jadwal kegiatan:")
+        print("No. | Waktu Mulai | Waktu Selesai | Deskripsi")
+        for i in range(len(jadwal_kegiatan)):
+            aktivitas = jadwal_kegiatan[i]
+            print(f"{i+1}   | {aktivitas[0]}       | {aktivitas[1]}        | {aktivitas[2]}")
+        
+        i_hapus = int(input("Masukkan nomor kegiatan yang ingin dihapus: ")) - 1
+        if i_hapus < len(jadwal_kegiatan):
+            jadwal_kegiatan_baru = jadwal_kegiatan[:i_hapus] + jadwal_kegiatan[i_hapus+1:]
+            print("Kegiatan berhasil dihapus!")
+            return jadwal_kegiatan_baru
+        else:
+            print("Kegiatan tidak valid.")
+
+    return jadwal_kegiatan
+
+def tampilkan_jadwal(jadwal_kegiatan):
+    if not jadwal_kegiatan:
+        print("Jadwal kegiatan yang akan dilakukan kosong.")
+    else:
+        print("Jadwal kegiatan:")
+        print("No. | Waktu Mulai | Waktu Selesai | Deskripsi")
+        for i in range(len(jadwal_kegiatan)):
+            aktivitas = jadwal_kegiatan[i]
+            print(f"{i+1}   | {aktivitas[0]}       | {aktivitas[1]}        | {aktivitas[2]}")
+
+    return jadwal_kegiatan
+
+jadwal_kegiatan = []
+
+while True:
+    print("\nMenu:")
+    print("1. Tambah Kegiatan")
+    print("2. Hapus Kegiatan")
+    print("3. Tampilkan Jadwal")
+    print("4. Keluar")
+
+    pilihan = input("Masukkan pilihan (1/2/3/4): ")
+
+    if pilihan == "1":
+        jadwal_kegiatann = tambah_jadwal(jadwal_kegiatan)
+    elif pilihan == "2":
+        jadwal_kegiatan = hapus_jadwal(jadwal_kegiatan)
+    elif pilihan == "3":
+        tampilkan_jadwal(jadwal_kegiatan)
+    elif pilihan == "4":
+        break
+    else:
+        print("Pilihan tidak valid. Silakan coba lagi.")
+       
+print("  Terimakasih")
