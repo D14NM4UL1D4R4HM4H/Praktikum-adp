@@ -91,6 +91,6 @@ def main():
             print("Pilihan tidak valid. Silakan masukkan pilihan yang benar.")
 
 if __name__ == "__main__":
-    with open("data.txt", "a") as file:
+    with open("datapasien.txt", "a") as file:
         pass
     main()
