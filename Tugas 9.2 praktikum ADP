@@ -1,0 +1,23 @@
+from termcolor import cprint, colored
+
+for i in range(5):
+    cprint(' ' * (4 - i) + '^' * (i * 2 + 25), 'red')
+
+for i in range(3):
+    cprint(" "*33, "white","on_dark_grey")
+    
+for i in range(5):
+    cprint(" "*4,"white","on_dark_grey",end="")
+    cprint(" "*4,"white","on_light_cyan",end="")
+    cprint(" "*4,"white","on_dark_grey",end="")
+    cprint(" "*9,"yellow","on_yellow",end="")
+    cprint(" "*4,"white","on_dark_grey",end="")
+    cprint(" "*4,"white","on_light_cyan",end="")
+    cprint(" "*4,"white","on_dark_grey",end = " ")
+    print( )
+    
+for i in range(2):
+    cprint(" "*12,"white","on_dark_grey",end="")
+    cprint(" "*9,"white","on_yellow",end="") 
+    cprint(" "*12,"white","on_dark_grey",end = " ")
+    print( )
