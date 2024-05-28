@@ -1,0 +1,7 @@
+from termcolor import cprint, colored
+
+for i in range(5):
+	cprint(" "*25,"red","on_red")
+for i in range(5):
+	cprint(" "*25,"white","on_white")
+print( )
