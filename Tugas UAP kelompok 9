@@ -1,0 +1,147 @@
+from termcolor import colored, cprint
+import os
+import time
+
+def print_tiket(artis, tanggal, tempat, total_pesanan, total_harga):
+    time.sleep(3)
+    print(" ")
+    cprint(" "*60,"white","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    cprint("="*60,"black","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    cprint("{:^{width}}".format("---- TIKET KONSER ----", width=60),"black","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    cprint("="*60,"black","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    cprint("{:^{width}}".format(f"Artis : {artis}", width=60),"black","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    cprint("{:^{width}}".format(f"Tanggal : {tanggal}", width=60),"black","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    cprint("{:^{width}}".format(f"Tempat : {tempat}", width=60),"black","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    cprint("{:^{width}}".format(f"Total Pesanan : {total_pesanan}", width=60),"black","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    cprint("{:^{width}}".format(f"Total Harga : Rp.{total_harga}", width=60),"black","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    cprint("="*60,"black","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    cprint("{:^{width}}".format("Terima kasih telah memesan tiket konser", width=60),"black","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    cprint("="*60,"black","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    cprint(" "*60,"white","on_cyan")
+    print(" ")
+    time.sleep(3)
+
+os.system('cls')
+tiket_konser = [
+    {
+        "id": 1,
+        "artis": "Taylor Swift",
+        "tanggal": "17-08-2024",
+        "tempat": "National Stadium, Singapura",
+        "harga": 1700000,
+        "kursi_tersedia": 3000
+    },
+    {
+        "id": 2,
+        "artis": "lyodra",
+        "tanggal": "25-08-2024",
+        "tempat": "Stadion Utama Gelora Bung Karno, jakarta",
+        "harga": 850000,
+        "kursi_tersedia": 900
+    }
+]
+
+def tampilkan_daftar_konser():
+    time.sleep(3)
+    print(" ")
+    cprint(" "*60,"white","on_magenta")
+    cprint("="*60,"white","on_magenta")
+    cprint(" "*60,"white","on_magenta")
+    cprint("{:^{width}}".format("Daftar Konser Tersedia", width=60),"white","on_magenta")
+    cprint(" "*60,"white","on_magenta")
+    cprint("="*60, "white","on_magenta")
+    cprint(" "*60,"white","on_magenta")
+    for konser in tiket_konser:
+        cprint("{:^{width}}".format(f"ID : {konser['id']}", width=60),"white", "on_magenta")
+        cprint(" "*60,"white","on_magenta")
+        cprint("{:^{width}}".format(f"Artis : {konser['artis']}", width=60),"white", "on_magenta")
+        cprint(" "*60,"white","on_magenta")
+        cprint("{:^{width}}".format(f"Tanggal : {konser['tanggal']}", width=60),"white", "on_magenta")
+        cprint(" "*60,"white","on_magenta")
+        cprint("{:^{width}}".format(f"Tempat : {konser['tempat']}", width=60), "white", "on_magenta")
+        cprint(" "*60,"white","on_magenta")
+        cprint("{:^{width}}".format(f"Harga Tiket : Rp.{konser['harga']}", width=60), "white", "on_magenta")
+        cprint(" "*60,"white","on_magenta")
+        cprint("{:^{width}}".format(f"Kursi Tersedia : {konser['kursi_tersedia']}", width=60),"white", "on_magenta")
+        cprint(" "*60,"white","on_magenta")
+        cprint("="*60, "white","on_magenta")
+        cprint(" "*60,"white","on_magenta")
+    print(" ")
+    time.sleep(3)
+
+def pesan_tiket(id_konser, jumlah_tiket):
+    for konser in tiket_konser:
+        if konser['id'] == id_konser:
+            if konser['kursi_tersedia'] >= jumlah_tiket:
+                total_harga = konser['harga'] * jumlah_tiket
+                konser['kursi_tersedia'] -= jumlah_tiket
+                total_pesanan = jumlah_tiket
+                artis = konser['artis']
+                tanggal = konser['tanggal']
+                tempat = konser['tempat']
+                with open("tiket.txt","a") as file:
+                    file.write(f"{'total harga = ',total_harga}\n")
+                print(f"Pemesanan berhasil untuk konser {konser['artis']}")
+                print(" ")
+                print(f"Total biaya: Rp.{total_harga}")
+                print(" ")
+                print_tiket(artis, tanggal, tempat, total_pesanan, total_harga)
+                return True
+            else:
+                print(" ")
+                print(f"Maaf, tiket untuk konser {konser['artis']} tidak mencukupi.")
+                return False
+    print("Konser tidak ditemukan.")
+    return False
+
+def main():
+    while True:
+        print("\nMenu Pemesanan Tiket Konser:")
+        print(" ")
+        print("1. Lihat Daftar Konser Yang Tersedia")
+        print("2. Pesan Tiket Konser")
+        print(" ")
+
+        pilihan = input("Pilih menu : ")
+        print(" ")
+
+        if pilihan == '1':  
+            tampilkan_daftar_konser()
+
+        elif pilihan == '2':  
+            print(" ")
+            id_konser = int(input("Masukkan ID konser yang ingin dipesan: "))
+            print(" ")
+            jumlah_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan: "))
+            print(" ")
+            with open("tiket.txt","a") as file:
+                file.write(f"{'id_konser = ',id_konser},{'jumlah tiket = ',jumlah_tiket}\n")
+            if pesan_tiket(id_konser, jumlah_tiket):
+                print(" ")
+                print("Selamat menikmati konser Anda!")
+                print(" ")
+                print("Terima kasih telah menggunakan layanan pemesanan tiket.")
+                print(" ")
+            else:
+                print(" ")
+                print("Pemesanan tiket tidak berhasil.")
+            break
+
+        else:
+            print(" ")
+            print("Pilihan tidak valid. Silakan pilih menu yang tersedia.")
+
+if __name__ == "__main__":
+    main()
