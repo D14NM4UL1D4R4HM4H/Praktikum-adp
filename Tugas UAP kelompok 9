@@ -143,5 +143,4 @@ def main():
             print(" ")
             print("Pilihan tidak valid. Silakan pilih menu yang tersedia.")
 
-if __name__ == "__main__":
-    main()
+main()
